@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Remove Background WebGPU
 
-## Getting Started
+A simple Next js app client side for running [MODNet](https://huggingface.co/Xenova/modnet), tiny portrait background removal model, locally in the browser using Transformers.js and WebGPU-acceleration.
+This example is inspired by [Xenova](https://x.com/xenovacom) check his repo [here](https://github.com/huggingface/transformers.js-examples/tree/main/remove-background-webgpu)
 
-First, run the development server:
+## Added features :
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Storig and Query Client side:-
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [TinyBase](https://tinybase.org/) store data in indexeddb and use tinybase tinyql for search query client side.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Nextjs [searchparams](https://nextjs.org/docs/app/api-reference/functions/use-search-params) for sort by and toggling features.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+UI accessible components:-
 
-## Learn More
+- [react aria components](https://react-spectrum.adobe.com/react-aria/index.html) component like Table ,Dialog ,Select and more.
 
-To learn more about Next.js, take a look at the following resources:
+## Video for a demo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> find me on x [@mouktardev](https://x.com/mouktardev) or threads [@mouktardev](https://www.threads.net/@mouktardev)
