@@ -1,4 +1,4 @@
-# Remove Background WebGPU
+# Remove Background
 
 A simple Next js app client side for running [MODNet](https://huggingface.co/Xenova/modnet), tiny portrait background removal model, locally in the browser using Transformers.js and WebGPU-acceleration.
 This example is inspired by [Xenova](https://x.com/xenovacom) check his repo [here](https://github.com/huggingface/transformers.js-examples/tree/main/remove-background-webgpu)
@@ -7,9 +7,7 @@ This example is inspired by [Xenova](https://x.com/xenovacom) check his repo [he
 
 Storig and Query Client side:-
 
-- [TinyBase](https://tinybase.org/) store data in indexeddb and use tinybase tinyql for search query client side.
-
-- Nextjs [searchparams](https://nextjs.org/docs/app/api-reference/functions/use-search-params) for sort by and toggling features.
+- [TinyBase](https://tinybase.org/) store data and use [TinyQL](https://tinybase.org/guides/using-queries/tinyql/) for search and query client side with the help of nextjs [searchparams](https://nextjs.org/docs/app/api-reference/functions/use-search-params)
 
 UI accessible components:-
 
