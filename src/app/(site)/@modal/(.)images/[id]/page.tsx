@@ -11,6 +11,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
         title: `image ${id}`,
         description: `image ${id}`,
+        creator: "Mouktar Aden",
     }
 }
 

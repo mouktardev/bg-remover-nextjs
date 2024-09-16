@@ -5,8 +5,9 @@ import "./globals.css";
 import Providers from "./Providers";
 
 export const metadata: Metadata = {
-  title: "Image Cropper",
-  description: "Crop your image background",
+  title: "Background image remover",
+  description: "portrait background removal site using Webgpu",
+  creator: "Mouktar Aden",
 };
 export const viewport: Viewport = {
   width: 'device-width',

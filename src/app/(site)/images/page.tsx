@@ -1,6 +1,14 @@
 import DropZone from "@/components/DropZone";
 import ImageGallery from "@/components/ImageGallery";
+import { Metadata } from "next";
 import { Suspense } from "react";
+
+
+export const metadata: Metadata = {
+  title: "Background image remover",
+  description: "portrait background removal site using webgpu",
+  creator: "Mouktar Aden",
+};
 
 export default function page() {
   return (
