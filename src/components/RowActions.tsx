@@ -1,5 +1,3 @@
-"use client"
-
 import { useCell, useDelRowCallback } from '@/lib/schema';
 import { default as NextImage } from "next/image";
 import { useRouter, useSearchParams } from 'next/navigation';

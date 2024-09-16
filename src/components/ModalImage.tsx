@@ -74,7 +74,7 @@ export function ModalImage({ rowId }: Props) {
                                                 width={width}
                                                 height={height}
                                                 priority={true}
-                                                className="size-full object-contain"
+                                                className="max-h-[500px] object-contain"
                                             />
                                         </TransformComponent>
                                         <div className="flex overflow-hidden rounded-lg border border-accent">

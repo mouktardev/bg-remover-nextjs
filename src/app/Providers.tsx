@@ -11,7 +11,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         .setTablesSchema(TablesSchema)
     );
 
-    //create Persister in IndexedDb 
+    // Create a persister in IndexedDb 
     // useCreatePersister(
     //     store,
     //     (store) => {

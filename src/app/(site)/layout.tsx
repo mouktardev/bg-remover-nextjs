@@ -12,8 +12,7 @@ export default function SiteLayout({ children, modal }: { children: React.ReactN
                     <div className="flex flex-1 items-center gap-3">
                         <Link href='/images'>
                             <Button type="button" variant="outline">
-                                <LuHome className="mr-2 size-4" />
-                                images
+                                <LuHome className="size-4" />
                             </Button>
                         </Link>
                     </div>
