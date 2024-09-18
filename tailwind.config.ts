@@ -16,12 +16,6 @@ const config: Config = {
       },
     },
     extend: {
-      backgroundImage: {
-				gradientMesh: ` radial-gradient(at 1% 2%, hsla(var(--gradient-color-1),0.5) 0px, transparent 50%),
-								radial-gradient(at 52% 61%, hsla(var(--gradient-color-2),0.5) 0px, transparent 50%),
-								radial-gradient(at 89% 85%, hsla(var(--gradient-color-3),0.5) 0px, transparent 50%);
-							`,
-			},
       colors: {
 				primary: "rgb(var(--primary) / <alpha-value>)",
 				secondary: "rgb(var(--secondary) / <alpha-value>)",
@@ -37,9 +31,6 @@ const config: Config = {
 				successForeground: "rgb(var(--success-foreground) / <alpha-value>)",
 				action: "rgb(var(--action) / <alpha-value>)",
 				actionForeground: "rgb(var(--action-foreground) / <alpha-value>)",
-				gradientColor1: "hsla(var(--gradient-color-1),1)",
-				gradientColor2: "hsla(var(--gradient-color-2),1)",
-				gradientColor3: "hsla(var(--gradient-color-3),1)",
 			},
       animation: {
         orbit: "orbit calc(var(--duration)*1s) linear infinite",

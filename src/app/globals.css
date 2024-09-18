@@ -23,9 +23,6 @@
     --success-foreground: 110 231 183;
     --action: 87 0 138;
     --action-foreground: 223 168 255;
-    --gradient-color-1: 314, 100%, 74%;
-    --gradient-color-2: 294, 0%, 80%;
-    --gradient-color-3: 257, 100%, 71%;
   }
 
   .dark {
@@ -43,9 +40,6 @@
     --success-foreground: 2 44 34;
     --action: 223 168 255;
     --action-foreground: 87 0 138;
-    --gradient-color-1: 314, 100%, 24%;
-    --gradient-color-2: 294, 0%, 0%;
-    --gradient-color-3: 257, 100%, 21%;
   }
   * {
     /* @apply outline outline-1 outline-red-500; */
