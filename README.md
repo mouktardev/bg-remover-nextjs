@@ -17,4 +17,44 @@ UI accessible components:-
 
 ---
 
+## Persistence layer
+
+TinyBase offer different [persistence](https://tinybase.org/guides/persistence/) modules to store data in longer-term.
+for example to persist on indexeddb all you have to do is this in `Provider.tsx`
+
+```ts
+useCreatePersister(
+  store,
+  (store) => {
+    return createIndexedDbPersister(store, "store");
+  },
+  [],
+  async (persister) => {
+    await persister?.startAutoLoad();
+    await persister?.startAutoSave();
+  }
+);
+```
+
+## Run it locally
+
+```sh
+git clone https://github.com/mouktardev/bg-remover-nextjs.git
+
+```
+
+```sh
+cd /bg-remover-nextjs
+```
+
+```sh
+npm i
+```
+
+```sh
+npm run dev
+```
+
+Make sure your browser support graphics acceleration, the application should now be running locally. Open your browser and go to `http://localhost:3000` to see it in action.
+
 > find me on x [@mouktardev](https://x.com/mouktardev) or threads [@mouktardev](https://www.threads.net/@mouktardev)
