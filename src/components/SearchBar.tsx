@@ -1,10 +1,10 @@
 import { useQueries, useResultTableCellIds } from '@/lib/schema'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
-import { Button as ButtonAria, Key, ListBox, ListBoxItem, ListBoxItemProps, Popover, Select, SelectValue } from 'react-aria-components'
-import { LuArrowDownZA, LuArrowUpAZ, LuCheck, LuChevronsUpDown, LuLayoutGrid, LuLayoutList, LuSearch } from 'react-icons/lu'
+import { LuArrowDownZA, LuArrowUpAZ, LuChevronDown, LuLayoutGrid, LuLayoutList, LuSearch } from 'react-icons/lu'
 import { useDebouncedCallback } from 'use-debounce'
 import { Button } from './ui/Button'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from './ui/Select'
 
 export default function SearchBar() {
     const searchParams = useSearchParams()
@@ -22,7 +22,7 @@ export default function SearchBar() {
         replace(`${pathname}?${params.toString()}`, { scroll: false })
     }, 300);
 
-    const handleSort = (sortBy: Key) => {
+    const handleSort = (sortBy: string) => {
         const params = new URLSearchParams(searchParams)
         if (sortBy) {
             params.set("sort-by", sortBy.toString());
@@ -79,7 +79,9 @@ export default function SearchBar() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchParams])
 
-    const queryTableCellIds = useResultTableCellIds("imagesQuery");
+    const selectOptions = useResultTableCellIds("imagesQuery")
+        .filter((value) => !["imageUrl", "transformedImageUrl"].includes(value))
+        .map((value) => value)
 
     return (
         <div className="flex flex-wrap justify-center gap-3">
@@ -96,7 +98,7 @@ export default function SearchBar() {
                 </label>
                 <input className="peer rounded-md border border-accent bg-foreground py-[9px] pl-10 text-sm text-primary placeholder:text-secondary focus:border-actionForeground focus:outline-none"
                     placeholder="search"
-                    defaultValue={searchParams.get("query")?.toString()}
+                    value={searchParams.get("query")?.toString()}
                     onChange={(e) => {
                         handleSearch(e.target.value)
                     }}
@@ -110,46 +112,31 @@ export default function SearchBar() {
                     <LuArrowUpAZ className="size-4" />
                 )}
             </Button>
-            <Select aria-label='sort-by' onSelectionChange={handleSort}>
-                <ButtonAria className="inline-flex size-full cursor-default items-center gap-2 rounded-lg border border-accent bg-foreground px-2 py-1 text-left text-base leading-normal shadow-md transition pressed:bg-foreground/50 focus:outline-none">
-                    <SelectValue className="flex-1 truncate">
-                        {({ defaultChildren, isPlaceholder }) => {
-                            return isPlaceholder ? <p className='text-secondary'>sort by</p> : defaultChildren;
-                        }}
-                    </SelectValue>
-                    <LuChevronsUpDown className='size-4' />
-                </ButtonAria>
-                <Popover className="max-h-60 overflow-auto rounded-md border border-accent bg-foreground text-base shadow-lg entering:animate-in entering:fade-in exiting:animate-out exiting:fade-out">
-                    {queryTableCellIds.length > 0 &&
-                        <ListBox className="p-1 outline-none">
-                            {queryTableCellIds.filter((value) => !["imageUrl", "transformedImageUrl"].includes(value)).map((value) => (
-                                <StatusItem key={value} id={value} textValue={value}>
-                                    {value}
-                                </StatusItem>
-                            ))}
-                        </ListBox>}
-                </Popover>
+            <Select
+                value={searchParams.get("sort-by") ? searchParams.get("sort-by") as string : "name"}
+                onValueChange={handleSort}>
+                <SelectTrigger asChild>
+                    <Button type="button" variant={'outline'}>
+                        <SelectValue placeholder="sort by" />
+                        <LuChevronDown className="ml-2 size-4" />
+                    </Button>
+                </SelectTrigger>
+                <SelectContent
+                    ref={(ref) => {
+                        if (!ref) return;
+                        ref.ontouchstart = (e) => {
+                            e.preventDefault();
+                        };
+                    }}>
+                    <SelectGroup>
+                        {selectOptions.map(option =>
+                            <SelectItem key={option} value={option}>
+                                {option}
+                            </SelectItem>)
+                        }
+                    </SelectGroup>
+                </SelectContent>
             </Select>
         </div>
     )
-}
-
-function StatusItem(props: ListBoxItemProps & { children: React.ReactNode }) {
-    return (
-        <ListBoxItem
-            {...props}
-            className="group flex cursor-default select-none items-center gap-2 rounded px-4 py-2 text-primary outline-none focus:bg-background focus:text-action"
-        >
-            {({ isSelected }) => (
-                <>
-                    <span className="flex flex-1 items-center gap-2 truncate font-normal group-selected:font-medium">
-                        {props.children}
-                    </span>
-                    <span className="flex w-5 items-center text-primary group-focus:text-action">
-                        {isSelected && <LuCheck className='size-4' />}
-                    </span>
-                </>
-            )}
-        </ListBoxItem>
-    );
 }

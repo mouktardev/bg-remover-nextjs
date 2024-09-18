@@ -11,7 +11,8 @@ Storig and Query Client side:-
 
 UI accessible components:-
 
-- [react aria components](https://react-spectrum.adobe.com/react-aria/index.html) component like Table ,Dialog ,Select and more.
+- [react aria components](https://react-spectrum.adobe.com/react-aria/index.html) components like Table, Modal, Dialog and more.
+- [shadcn/ui](https://ui.shadcn.com/) components like Select, Toaster and more.
 
 ## Video for a demo
 
@@ -55,6 +56,6 @@ npm i
 npm run dev
 ```
 
-Make sure your browser support graphics acceleration, the application should now be running locally. Open your browser and go to `http://localhost:3000` to see it in action.
+The application should now be running locally. Open your browser make sure support graphics acceleration is on and go to `http://localhost:3000` to see it in action.
 
 > find me on x [@mouktardev](https://x.com/mouktardev) or threads [@mouktardev](https://www.threads.net/@mouktardev)
