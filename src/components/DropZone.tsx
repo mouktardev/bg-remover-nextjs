@@ -28,7 +28,7 @@ export default function DropZone() {
                     if (!navigator.gpu) {
                         throw new Error("WebGPU is not supported in this browser.");
                     }
-                    const model_id = "Xenova/modnet";
+                    const model_id = "briaai/RMBG-1.4";
                     // Use optional chaining to avoid 'possibly undefined' error
                     env?.backends?.onnx?.wasm && (env.backends.onnx.wasm.proxy = false)
                     modelRef.current ??= await AutoModel.from_pretrained(model_id, {
