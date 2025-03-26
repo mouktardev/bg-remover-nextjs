@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Script defer src="https://umami.mouktar.com/script.js" data-website-id="06e8d374-eccd-441d-8efa-9c8bc1ae95a6" />
+        <Script defer src="https://umami.mouktar.com/script.js" data-website-id="550cacd1-ec47-44a8-857e-7bada0384f21" />
       </head>
       <body className={cn(
         "min-h-dvh bg-background antialiased",
